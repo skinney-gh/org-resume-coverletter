@@ -131,6 +131,7 @@
 #+LATEX_HEADER: \newcommand{\resumelinkedin}{https://linkedin.com/in/shreyasragavan}
 #+LATEX_HEADER: \newcommand{\resumewebsite}{https://shreyas.ragavan.co}
 #+LATEX_HEADER: \newcommand{\resumegithub}{https://github.com/shrysr}
+#+LATEX_HEADER: \newcommand{\resumelocation}{SF, USA}
 
 # ==============================================================================
 # SPACING CONFIGURATION
@@ -170,9 +171,10 @@
 #+LATEX_HEADER: \newcommand{\headerlinkedin}{\textcolor{accent}{\faLinkedin} \href{\resumelinkedin}{\textcolor{primary}{LinkedIn}}}
 #+LATEX_HEADER: \newcommand{\headerwebsite}{\textcolor{accent}{\faGlobe} \href{\resumewebsite}{\textcolor{primary}{Website}}}
 #+LATEX_HEADER: \newcommand{\headergithub}{\textcolor{accent}{\faGithub} \href{\resumegithub}{\textcolor{primary}{Github}}}
+#+LATEX_HEADER: \newcommand{\headerlocation}{\textcolor{accent}{\faMapMarker*} \resumelocation}
 
 # Final header assembly: Combines name and contact info with proper spacing
-#+LATEX_HEADER: \AtBeginDocument{\begin{center}\headername\vspace{\subtitlecontactspacing}\\{\small\headeremail \headercontactspacing$|$\headercontactspacing \headerphone \headercontactspacing$|$\headercontactspacing \headerlinkedin \headercontactspacing$|$\headercontactspacing \headerwebsite \headercontactspacing$|$\headercontactspacing \headergithub}\end{center}\headerspacing}
+#+LATEX_HEADER: \AtBeginDocument{\begin{center}\headername\vspace{\subtitlecontactspacing}\\{\small\headeremail \headercontactspacing$|$\headercontactspacing \headerphone \headercontactspacing$|$\headercontactspacing \headerlinkedin \headercontactspacing$|$\headercontactspacing \headerwebsite \headercontactspacing$|$\headercontactspacing \headergithub \headercontactspacing$|$\headercontactspacing \headerlocation}\end{center}\headerspacing}
 
 #+OPTIONS: prop:t
 

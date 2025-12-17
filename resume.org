@@ -37,6 +37,11 @@
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
 #+LATEX_HEADER: \usepackage{lmodern}
 
+# Graphics and positioning for corner banner
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{positioning}
+#+LATEX_HEADER: \usepackage{etoolbox}
+
 # ==============================================================================
 # COLOR PALETTE
 # ==============================================================================
@@ -76,11 +81,12 @@
 # ==============================================================================
 # HEADER AND FOOTER CONFIGURATION
 # ==============================================================================
-# Setup fancy headers/footers for page numbers
+# Setup fancy headers/footers for page numbers with compact page/total notation
 #+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \usepackage{lastpage}
 #+LATEX_HEADER: \pagestyle{fancy}
 #+LATEX_HEADER: \fancyhf{}
-#+LATEX_HEADER: \fancyfoot[C]{\small\color{secondary}\thepage}
+#+LATEX_HEADER: \fancyfoot[C]{\small\color{secondary}\thepage/\pageref{LastPage}}
 #+LATEX_HEADER: \renewcommand{\headrulewidth}{0pt}
 #+LATEX_HEADER: \renewcommand{\footrulewidth}{0pt}
 
@@ -132,6 +138,7 @@
 #+LATEX_HEADER: \newcommand{\resumewebsite}{https://shreyas.ragavan.co}
 #+LATEX_HEADER: \newcommand{\resumegithub}{https://github.com/shrysr}
 #+LATEX_HEADER: \newcommand{\resumelocation}{SF, USA}
+#+LATEX_HEADER: \newcommand{\resumevisatext}{No Sponsorship Required}
 
 # ==============================================================================
 # SPACING CONFIGURATION
@@ -173,8 +180,28 @@
 #+LATEX_HEADER: \newcommand{\headergithub}{\textcolor{accent}{\faGithub} \href{\resumegithub}{\textcolor{primary}{Github}}}
 #+LATEX_HEADER: \newcommand{\headerlocation}{\textcolor{accent}{\faMapMarker*} \resumelocation}
 
+# ==============================================================================
+# CORNER BADGE CONFIGURATION
+# ==============================================================================
+# Configurable corner badge for visa/work status
+# Badge appears as a small rectangular label in top right corner
+
+# Badge styling
+#+LATEX_HEADER: \newcommand{\badgefontsize}{7}
+#+LATEX_HEADER: \newcommand{\badgexshift}{-0.3cm}
+#+LATEX_HEADER: \newcommand{\badgeyshift}{-0.3cm}
+
+# Corner badge implementation (only renders if \resumevisatext is not empty)
+#+LATEX_HEADER: \newcommand{\visabanner}{%
+#+LATEX_HEADER:   \ifdefempty{\resumevisatext}{}{%
+#+LATEX_HEADER:   \begin{tikzpicture}[remember picture,overlay]
+#+LATEX_HEADER:     \node[anchor=north east,xshift=\badgexshift,yshift=\badgeyshift,fill=accent!90,text=white,font=\fontsize{\badgefontsize}{8}\selectfont\bfseries,inner sep=3pt,outer sep=0pt,rounded corners=2pt] at (current page.north east) {\resumevisatext};
+#+LATEX_HEADER:   \end{tikzpicture}%
+#+LATEX_HEADER:   }%
+#+LATEX_HEADER: }
+
 # Final header assembly: Combines name and contact info with proper spacing
-#+LATEX_HEADER: \AtBeginDocument{\begin{center}\headername\vspace{\subtitlecontactspacing}\\{\small\headeremail \headercontactspacing$|$\headercontactspacing \headerphone \headercontactspacing$|$\headercontactspacing \headerlinkedin \headercontactspacing$|$\headercontactspacing \headerwebsite \headercontactspacing$|$\headercontactspacing \headergithub \headercontactspacing$|$\headercontactspacing \headerlocation}\end{center}\headerspacing}
+#+LATEX_HEADER: \AtBeginDocument{\visabanner\begin{center}\headername\vspace{\subtitlecontactspacing}\\{\small\headeremail \headercontactspacing$|$\headercontactspacing \headerphone \headercontactspacing$|$\headercontactspacing \headerlinkedin \headercontactspacing$|$\headercontactspacing \headerwebsite \headercontactspacing$|$\headercontactspacing \headergithub \headercontactspacing$|$\headercontactspacing \headerlocation}\end{center}\headerspacing}
 
 #+OPTIONS: prop:t
 
@@ -394,13 +421,13 @@ Hello World
 
 * EXPERIENCE
 
-** Sr Machine Learning Operations (MLOps) Engineer 
+** Machine Learning Operations (MLOps) Engineer 
    :PROPERTIES:
    :COMPANY: Definity Financial
    :PERIOD: Jun 2022 - Present
    :LOCATION: Vancouver, Canada
    :END:
-- Led the planning, development and maintenance of multiple analytical products from an MLOps perspective especially focused on Call Center AI applications, like agent assistance, call summarisation, topic modelling. 
+- Led the planning, development and maintenance of multiple analytical products introducing AI to Call Center applications eg: agent assistance, call summarisation, topic modelling reports for contact centers. 
 - Developed and deployed statistical models, Generative AI *LLM API's, like call summarisation and  and rule-based systems on RStudio and Google Cloud, significantly enhancing business workflows and productivity at call centers and fraud detection.
 - Managed project lifecycles and on-time delivery, balancing technical debt and stakeholder expectations, while mentoring junior team members
 - Key contributor to improving operational efficiency and system reliability by establishing MLOps best practices and optimizing legacy processes
@@ -443,7 +470,7 @@ Hello World
    :LOCATION: Mumbai Area, India
    :END:
 
-- Developed and negotiated proposals, cost estimations, and pricing strategies, ensuring clear purchase terms with diverse clients
+- Developed and negotiated proposals, cost estimations, and pricing strategies, ensuring clear purchase terms with diverse clients for a product line. This included 
 - Managed end-to-end techno-commercial lifecycle of critical application products from sales to maintenance, coordinating with global stakeholders
 
 ** Research Engineer
@@ -453,12 +480,12 @@ Hello World
    :LOCATION: Pune, India
    :END:
 
-- Proposed & engineered a 75% reduction in runtime and 100% software license utilization improvement through a bespoke, python driven solution
-- Developed automated model runs & reports, saving 30 minutes of analysis time, and 4+ hours of large data transfer per design iteration
+- Proposed & engineered a *75% reduction* in runtime and 100% software license utilization improvement through a bespoke, python driven solution to schedule and prioritise computational model simulations.
+- Developed automated model runs & reports, saving 30 minutes of analysis time, and 4+ hours of large data transfer per design iteration *(300+ hours/month)*.
 
 * EDUCATION
 
-** MSc. Advanced Mechanical Engineering
+** MS. Advanced Mechanical Engineering
    :PROPERTIES:
    :INSTITUTION: University of Leeds
    :PERIOD: Sep 2010 - Nov 2011

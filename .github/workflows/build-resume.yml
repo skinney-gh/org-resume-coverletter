@@ -1,5 +1,10 @@
 name: Build Resume (TinyTeX Optimized)
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 on:
   push:
     branches: [ main ]
@@ -138,10 +143,10 @@ jobs:
         # Copy to dist directory with consistent naming
         echo ""
         echo "📂 Copying files to dist directory..."
-        cp resume.pdf dist/ShreyasRagavan-Resume.pdf
-        # cp resume.html dist/ShreyasRagavan-Resume.html
-        cp cover-letter.pdf dist/ShreyasRagavan-CoverLetter.pdf
-        # cp cover-letter.html dist/ShreyasRagavan-CoverLetter.html
+        cp resume.pdf dist/Shreyas_Ragavan-Resume.pdf
+        # cp resume.html dist/Shreyas_Ragavan-Resume.html
+        cp cover-letter.pdf dist/Shreyas_Ragavan-CoverLetter.pdf
+        # cp cover-letter.html dist/Shreyas_Ragavan-CoverLetter.html
 
         echo ""
         echo "✅ Files copied successfully:"
@@ -154,13 +159,16 @@ jobs:
         path: dist/*.pdf
         retention-days: 90
         
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v1
       if: github.ref == 'refs/heads/main'
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-        
+        path: ./dist
+
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v1
+      if: github.ref == 'refs/heads/main'
+
     - name: Create release
       if: github.ref == 'refs/heads/main'
       uses: softprops/action-gh-release@v1
@@ -168,8 +176,8 @@ jobs:
         tag_name: v${{ github.run_number }}
         name: Resume Build ${{ github.run_number }}
         files: |
-          dist/ShreyasRagavan-Resume.pdf
-          dist/ShreyasRagavan-CoverLetter.pdf
+          dist/Shreyas_Ragavan-Resume.pdf
+          dist/Shreyas_Ragavan-CoverLetter.pdf
         generate_release_notes: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

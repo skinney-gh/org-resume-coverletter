@@ -48,7 +48,7 @@ jobs:
           ulem capt-of latex-bin \
           latex epstopdf-pkg etoolbox
 
-        # tlmgr install collection-fontsrecommended collection-latexrecommended collection-latexextra
+        tlmgr install collection-fontsrecommended collection-latexrecommended collection-latexextra
           
         # Enable automatic package installation for missing packages
         tlmgr option autobackup 0

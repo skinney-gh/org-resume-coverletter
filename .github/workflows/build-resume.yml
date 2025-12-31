@@ -1,7 +1,7 @@
 name: Build Resume (TinyTeX Optimized)
 
 permissions:
-  contents: read
+  contents: write  # Required for creating releases
   pages: write
   id-token: write
 
@@ -48,7 +48,7 @@ jobs:
           ulem capt-of latex-bin \
           latex epstopdf-pkg etoolbox
 
-        tlmgr install collection-fontsrecommended collection-latexrecommended collection-latexextra
+        # tlmgr install collection-fontsrecommended collection-latexrecommended collection-latexextra
           
         # Enable automatic package installation for missing packages
         tlmgr option autobackup 0
@@ -171,7 +171,7 @@ jobs:
 
     - name: Create release
       if: github.ref == 'refs/heads/main'
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         tag_name: v${{ github.run_number }}
         name: Resume Build ${{ github.run_number }}
@@ -179,5 +179,3 @@ jobs:
           dist/Shreyas_Ragavan-Resume.pdf
           dist/Shreyas_Ragavan-CoverLetter.pdf
         generate_release_notes: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

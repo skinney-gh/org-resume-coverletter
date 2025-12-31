@@ -45,20 +45,20 @@ else
     exit 1
 fi
 
-# Export resume to HTML
-emacs --batch resume.org \
-      --eval "(require 'ox-html)" \
-      --eval "(setq org-confirm-babel-evaluate nil)" \
-      --eval "(setq org-html-head-include-default-style nil)" \
-      --eval "(setq org-html-head \"<style>body{font-family:'Segoe UI',Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;line-height:1.6;color:#333;}h1{color:#1f4e79;border-bottom:2px solid #1f4e79;text-align:center;}h2{color:#333333;margin-top:1.5em;border-bottom:1px solid #ccc;padding-bottom:5px;}h3{color:#1f4e79;margin-top:1em;}ul{margin-left:20px;}li{margin-bottom:5px;}a{color:#1f4e79;text-decoration:none;}a:hover{text-decoration:underline;}.title{text-align:center;margin-bottom:2em;}.org-ul{list-style-type:disc;}.contact-info{text-align:center;color:#666;margin-bottom:20px;}</style>\")" \
-      --eval "(org-html-export-to-html)" 2>/dev/null
+# Export resume to HTML (commented out)
+# emacs --batch resume.org \
+#       --eval "(require 'ox-html)" \
+#       --eval "(setq org-confirm-babel-evaluate nil)" \
+#       --eval "(setq org-html-head-include-default-style nil)" \
+#       --eval "(setq org-html-head \"<style>body{font-family:'Segoe UI',Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;line-height:1.6;color:#333;}h1{color:#1f4e79;border-bottom:2px solid #1f4e79;text-align:center;}h2{color:#333333;margin-top:1.5em;border-bottom:1px solid #ccc;padding-bottom:5px;}h3{color:#1f4e79;margin-top:1em;}ul{margin-left:20px;}li{margin-bottom:5px;}a{color:#1f4e79;text-decoration:none;}a:hover{text-decoration:underline;}.title{text-align:center;margin-bottom:2em;}.org-ul{list-style-type:disc;}.contact-info{text-align:center;color:#666;margin-bottom:20px;}</style>\")" \
+#       --eval "(org-html-export-to-html)" 2>/dev/null
 
-if [ -f "resume.html" ]; then
-    mv resume.html test-output/ShreyasRagavan-Resume.html
-    echo "✅ Resume HTML exported successfully"
-else
-    echo "❌ Resume HTML export failed"
-fi
+# if [ -f "resume.html" ]; then
+#     mv resume.html test-output/ShreyasRagavan-Resume.html
+#     echo "✅ Resume HTML exported successfully"
+# else
+#     echo "❌ Resume HTML export failed"
+# fi
 
 echo ""
 echo "📝 Exporting cover letter..."
@@ -77,20 +77,20 @@ else
     echo "❌ Cover letter PDF export failed"
 fi
 
-# Export cover letter to HTML
-emacs --batch cover-letter.org \
-      --eval "(require 'ox-html)" \
-      --eval "(setq org-confirm-babel-evaluate nil)" \
-      --eval "(setq org-html-head-include-default-style nil)" \
-      --eval "(setq org-html-head \"<style>body{font-family:'Segoe UI',Arial,sans-serif;max-width:600px;margin:0 auto;padding:40px;line-height:1.8;color:#333;}h1{color:#1f4e79;text-align:center;margin-bottom:2em;border-bottom:2px solid #1f4e79;}p{margin-bottom:1em;text-align:justify;}a{color:#1f4e79;text-decoration:none;}a:hover{text-decoration:underline;}.contact-info{text-align:center;margin-bottom:2em;color:#666666;}.title{display:none;}</style>\")" \
-      --eval "(org-html-export-to-html)" 2>/dev/null
+# Export cover letter to HTML (commented out)
+# emacs --batch cover-letter.org \
+#       --eval "(require 'ox-html)" \
+#       --eval "(setq org-confirm-babel-evaluate nil)" \
+#       --eval "(setq org-html-head-include-default-style nil)" \
+#       --eval "(setq org-html-head \"<style>body{font-family:'Segoe UI',Arial,sans-serif;max-width:600px;margin:0 auto;padding:40px;line-height:1.8;color:#333;}h1{color:#1f4e79;text-align:center;margin-bottom:2em;border-bottom:2px solid #1f4e79;}p{margin-bottom:1em;text-align:justify;}a{color:#1f4e79;text-decoration:none;}a:hover{text-decoration:underline;}.contact-info{text-align:center;margin-bottom:2em;color:#666666;}.title{display:none;}</style>\")" \
+#       --eval "(org-html-export-to-html)" 2>/dev/null
 
-if [ -f "cover-letter.html" ]; then
-    mv cover-letter.html test-output/ShreyasRagavan-CoverLetter.html
-    echo "✅ Cover letter HTML exported successfully"
-else
-    echo "❌ Cover letter HTML export failed"
-fi
+# if [ -f "cover-letter.html" ]; then
+#     mv cover-letter.html test-output/ShreyasRagavan-CoverLetter.html
+#     echo "✅ Cover letter HTML exported successfully"
+# else
+#     echo "❌ Cover letter HTML export failed"
+# fi
 
 echo ""
 echo "🎉 Export test completed!"

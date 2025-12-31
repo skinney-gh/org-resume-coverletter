@@ -42,6 +42,8 @@ jobs:
           amsmath hyperref graphics wrapfig \
           ulem capt-of latex-bin \
           latex epstopdf-pkg etoolbox
+
+        tlmgr install collection-fontsrecommended collection-latexrecommended collection-latexextra
           
         # Enable automatic package installation for missing packages
         tlmgr option autobackup 0
@@ -71,39 +73,85 @@ jobs:
     - name: Export documents
       run: |
         export PATH="$HOME/bin:$PATH"
-        
+
         # Set TinyTeX to install missing packages automatically
         export TINYTEX_INSTALL_MISSING=1
-        
-        # Export resume
+
+        echo "=================================="
+        echo "Starting document export process"
+        echo "=================================="
+
+        # Export resume to PDF
+        echo ""
+        echo "📄 Exporting resume.org to PDF..."
         emacs --batch resume.org \
               --eval "(require 'ox-latex)" \
               --eval "(setq org-confirm-babel-evaluate nil)" \
               --eval "(setq org-latex-pdf-process '(\"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f\" \"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f\"))" \
-              --eval "(org-latex-export-to-pdf)" \
-              --eval "(org-html-export-to-html)"
-              
-        # Export cover letter
+              --eval "(org-latex-export-to-pdf)"
+
+        if [ -f "resume.pdf" ]; then
+            echo "✅ Resume PDF generated successfully"
+            ls -lh resume.pdf
+        else
+            echo "❌ ERROR: resume.pdf was not generated!"
+            echo "Listing current directory:"
+            ls -la
+            exit 1
+        fi
+
+        # Export resume to HTML (commented out)
+        # echo ""
+        # echo "📄 Exporting resume.org to HTML..."
+        # emacs --batch resume.org \
+        #       --eval "(require 'ox-html)" \
+        #       --eval "(setq org-confirm-babel-evaluate nil)" \
+        #       --eval "(org-html-export-to-html)"
+
+        # Export cover letter to PDF
+        echo ""
+        echo "📝 Exporting cover-letter.org to PDF..."
         emacs --batch cover-letter.org \
               --eval "(require 'ox-latex)" \
               --eval "(setq org-confirm-babel-evaluate nil)" \
               --eval "(setq org-latex-pdf-process '(\"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f\" \"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f\"))" \
-              --eval "(org-latex-export-to-pdf)" \
-              --eval "(org-html-export-to-html)"
-              
-        # Copy to dist directory
+              --eval "(org-latex-export-to-pdf)"
+
+        if [ -f "cover-letter.pdf" ]; then
+            echo "✅ Cover letter PDF generated successfully"
+            ls -lh cover-letter.pdf
+        else
+            echo "❌ ERROR: cover-letter.pdf was not generated!"
+            echo "Listing current directory:"
+            ls -la
+            exit 1
+        fi
+
+        # Export cover letter to HTML (commented out)
+        # echo ""
+        # echo "📝 Exporting cover-letter.org to HTML..."
+        # emacs --batch cover-letter.org \
+        #       --eval "(require 'ox-html)" \
+        #       --eval "(setq org-confirm-babel-evaluate nil)" \
+        #       --eval "(org-html-export-to-html)"
+
+        # Copy to dist directory with consistent naming
+        echo ""
+        echo "📂 Copying files to dist directory..."
         cp resume.pdf dist/ShreyasRagavan-Resume.pdf
-        cp resume.html dist/ShreyasRagavan-Resume.html
+        # cp resume.html dist/ShreyasRagavan-Resume.html
         cp cover-letter.pdf dist/ShreyasRagavan-CoverLetter.pdf
-        cp cover-letter.html dist/ShreyasRagavan-CoverLetter.html
+        # cp cover-letter.html dist/ShreyasRagavan-CoverLetter.html
+
+        echo ""
+        echo "✅ Files copied successfully:"
+        ls -lh dist/
         
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
         name: resume-documents
-        path: |
-          dist/*.pdf
-          dist/*.html
+        path: dist/*.pdf
         retention-days: 90
         
     - name: Deploy to GitHub Pages

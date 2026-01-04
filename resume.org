@@ -410,13 +410,14 @@
 (add-to-list 'org-export-filter-final-output-functions 'resume-export-filter)
 #+END_SRC
 
-* Summary
-Machine Learning Engineer with 13+ years bridging technical execution and business value across manufacturing, oil & gas, and financial services. Combines engineering design and technical sales background with ML expertise to translate stakeholder requirements into scalable AI products. Proven track record delivering production systems (GenAI/LLM) using GCP infrastructure while collaborating across Sales, Marketing, and Engineering teams.
+* SUMMARY
+
+Engineer with 13+ years bridging technical execution and business value across manufacturing, energy, and financial services. Combines engineering design and technical sales background to architect production GenAI and MLOps systems on GCP (RAG solutions, custom frameworks), translating stakeholder requirements into deployable products through cross-functional collaboration.
 
 * SKILLS
 
 - *Machine Learning & AI:* Python, R, PyTorch, Generative AI, LLMs, XGBoost, Statistical Modeling, Hyperparameter Tuning
-- *MLOps & Cloud:* GCP (Vertex AI, BigQuery, Looker), Kubernetes (KFP), Docker, CI/CD, Airflow, Observability (Cloud Logger, Cloud Traces)
+- *MLOps & Cloud:* GCP (Vertex AI, BigQuery, Looker, AlloyDB), Kubernetes (KFP), Docker, CI/CD, Airflow, Observability (Cloud Logger, Cloud Traces)
 - *Data Engineering:* ETL Pipelines, Data Modeling, SQL, DuckDB, Data Governance (Collibra)
 - *Core Technologies:* Git, Bash, Linux, Java, HTML, CSS
 
@@ -428,9 +429,12 @@ Machine Learning Engineer with 13+ years bridging technical execution and busine
    :PERIOD: Jun 2022 - Present
    :LOCATION: Vancouver, Canada
    :END:
-- Lead developer of 3+ production AI products serving *160k+ LLM requests/day*, with Looker, Cloud Logger, and Cloud Traces for observability and monitoring.
-- Built and maintained RAG-based live agent assistance solution with 15+ model variants, call summarization, and topic modeling systems processing *8k+ calls/day* across multiple GenAI products.
-- Created reusable ML frameworks, CI/CD pipelines, and logging infrastructure that reduced development time by *200+ hours* while mentoring junior engineers on MLOps best practices.
+
+- Lead developer of 3+ production AI products serving *160k+ requests/day* using LLM's via Vertex AI, with Looker, Cloud Logger, and Cloud Traces for observability; established design patterns and documentation ensuring long-term maintainability.
+
+- Built RAG-based live agent assistance solution with 15+ model variants, call summarization, and topic modeling systems processing *8,000+ requests/day*; introduced test-driven development and quality auditing practices, streamlining debugging and stakeholder alignment.
+
+- Accelerated development with AI-assisted code refactoring (reducing *months to 1 week*), reusable ML frameworks, and CI/CD pipelines, saving *200+ hours* per project while mentoring junior engineers on best practices.
 
 ** Analytics Engineer
    :PROPERTIES:

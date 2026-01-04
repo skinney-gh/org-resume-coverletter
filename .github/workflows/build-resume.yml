@@ -165,9 +165,9 @@ jobs:
       with:
         path: ./dist
 
-    - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v4
-      if: github.ref == 'refs/heads/main'
+    # - name: Deploy to GitHub Pages
+    #   uses: actions/deploy-pages@v4
+    #   if: github.ref == 'refs/heads/main'
 
     - name: Create release
       if: github.ref == 'refs/heads/main'
@@ -178,4 +178,4 @@ jobs:
         files: |
           dist/Shreyas_Ragavan-Resume.pdf
           dist/Shreyas_Ragavan-CoverLetter.pdf
-        generate_release_notes: true
+        generate_release_notes: false

@@ -416,7 +416,7 @@ Engineer with 13+ years bridging technical execution and business value across m
 
 * SKILLS
 
-- *Machine Learning & AI:* Python, R, PyTorch, Generative AI, LLMs, XGBoost, Statistical Modeling, Hyperparameter Tuning
+- *Machine Learning & AI:* Python, R, PyTorch, Generative AI, LLMs, Statistical Modeling, Hyperparameter Tuning
 - *MLOps & Cloud:* GCP (Vertex AI, BigQuery, Looker, AlloyDB), Kubernetes (KFP), Docker, CI/CD, Airflow, Observability (Cloud Logger, Cloud Traces)
 - *Data Engineering:* ETL Pipelines, Data Modeling, SQL, DuckDB, Data Governance (Collibra)
 - *Core Technologies:* Git, Bash, Linux, Java, HTML, CSS
@@ -430,9 +430,9 @@ Engineer with 13+ years bridging technical execution and business value across m
    :LOCATION: Vancouver, Canada
    :END:
 
-- Lead developer of 3+ production AI products serving *160k+ requests/day* using LLM's via Vertex AI, with Looker, Cloud Logger, and Cloud Traces for observability; established design patterns and documentation ensuring long-term maintainability.
+- Lead developer of 3+ production AI products serving *160k+ requests/day* to LLM's via Vertex AI, with Looker, Cloud Logger, and Cloud Traces for observability; established design patterns and documentation ensuring long-term maintainability.
 
-- Built RAG-based live agent assistance solution with 15+ model variants, call summarization, and topic modeling systems processing *8,000+ requests/day*; introduced test-driven development and quality auditing practices, streamlining debugging and stakeholder alignment.
+- Lead maintainer of a RAG-based live agent assistance solution with 15+ model variants, call summarization, and topic modeling systems processing *8k+ calls*; introduced test-driven development and quality auditing practices, streamlining debugging and stakeholder alignment.
 
 - Accelerated development with AI-assisted code refactoring (reducing *months to 1 week*), reusable ML frameworks, and CI/CD pipelines, saving *200+ hours* per project while mentoring junior engineers on best practices.
 

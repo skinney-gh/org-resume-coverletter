@@ -416,10 +416,10 @@ Engineer with 13+ years bridging technical execution and business value across m
 
 * SKILLS
 
-- *Machine Learning & AI:* Python, R, PyTorch, Generative AI, LLMs, Statistical Modeling, Hyperparameter Tuning
-- *MLOps & Cloud:* GCP (Vertex AI, BigQuery, Looker, AlloyDB), Kubernetes (KFP), Docker, CI/CD, Airflow, Observability (Cloud Logger, Cloud Traces)
+- *Machine Learning & AI:* Python, R, PyTorch, Generative AI, LLMs, LangChain, NLP, Statistical Modeling, Hyperparameter Tuning
+- *MLOps & Cloud:* GCP (Vertex AI, BigQuery, Looker, AlloyDB), Kubernetes (KFP), Docker, CI/CD, Jira, Airflow, Observability (Cloud Logger, Cloud Traces)
 - *Data Engineering:* ETL Pipelines, Data Modeling, SQL, DuckDB, Data Governance (Collibra)
-- *Core Technologies:* Git, Bash, Linux, Java, HTML, CSS
+- *Core Technologies:* Git, Bash, make, Linux, Java, HTML, CSS
 
 * EXPERIENCE
 

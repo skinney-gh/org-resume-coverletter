@@ -47,12 +47,12 @@
 # =============================================================================
 # These values should match the corresponding values in resume.org for consistency
 
-#+LATEX_HEADER: \newcommand{\coverlettername}{Shreyas Ragavan}                         % Your full name
-#+LATEX_HEADER: \newcommand{\coverletteremails}{shreyas@fastmail.com}                  % Email address
-#+LATEX_HEADER: \newcommand{\coverletterphone}{+1 279-258-9720}                       % Phone number
-#+LATEX_HEADER: \newcommand{\coverletterlinkedin}{https://linkedin.com/in/shreyasragavan}  % LinkedIn profile URL
-#+LATEX_HEADER: \newcommand{\coverletterwebsite}{https://shreyas.ragavan.co}           % Personal website URL
-#+LATEX_HEADER: \newcommand{\coverlettergithub}{https://github.com/shrysr}             % GitHub profile URL
+#+LATEX_HEADER: \newcommand{\coverlettername}{Scott Kinney}                         % Your full name
+#+LATEX_HEADER: \newcommand{\coverletteremails}{skinney6@gmail.com}                  % Email address
+#+LATEX_HEADER: \newcommand{\coverletterphone}{510.282.1299}                       % Phone number
+#+LATEX_HEADER: \newcommand{\coverletterlinkedin}{https://www.linkedin.com/in/scott-kinney-63895557}  % LinkedIn profile URL
+# #+LATEX_HEADER: \newcommand{\coverletterwebsite}{https://shreyas.ragavan.co}           % Personal website URL
+# #+LATEX_HEADER: \newcommand{\coverlettergithub}{https://github.com/shrysr}             % GitHub profile URL
 
 # =============================================================================
 # SPACING CONFIGURATION
@@ -66,10 +66,10 @@
 # =============================================================================
 # Replace these placeholders with actual values for each job application
 
-#+LATEX_HEADER: \newcommand{\hiringmanagername}{[HIRING MANAGER NAME]}           % Name of hiring manager or "Hiring Manager"
-#+LATEX_HEADER: \newcommand{\companyname}{[COMPANY NAME]}                       % Target company name
-#+LATEX_HEADER: \newcommand{\positiontitle}{[POSITION TITLE]}                   % Position you're applying for
-#+LATEX_HEADER: \newcommand{\specificrequirements}{[SPECIFIC SKILLS/REQUIREMENTS FROM JOB POSTING]}  % Key requirements from job posting
+#+LATEX_HEADER: \newcommand{\hiringmanagername}{To whom it may concern}           % Name of hiring manager or "Hiring Manager"
+#+LATEX_HEADER: \newcommand{\companyname}{Vultr}                       % Target company name
+#+LATEX_HEADER: \newcommand{\positiontitle}{DevOps Engineer}                   % Position you're applying for
+#+LATEX_HEADER: \newcommand{\specificrequirements}{Ansible,Terraform,Go}  % Key requirements from job posting
 
 # =============================================================================
 # ORG-MODE PROPERTIES - ALTERNATIVE CONFIGURATION METHOD

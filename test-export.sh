@@ -38,7 +38,7 @@ emacs --batch resume.org \
       --eval "(org-latex-export-to-pdf)" 2>/dev/null
 
 if [ -f "resume.pdf" ]; then
-    mv resume.pdf test-output/Shreyas_Ragavan-Resume.pdf
+    mv resume.pdf test-output/Scott_Kinney-Resume.pdf
     echo "✅ Resume PDF exported successfully"
 else
     echo "❌ Resume PDF export failed"
@@ -71,7 +71,7 @@ emacs --batch cover-letter.org \
       --eval "(org-latex-export-to-pdf)" 2>/dev/null
 
 if [ -f "cover-letter.pdf" ]; then
-    mv cover-letter.pdf test-output/Shreyas_Ragavan-CoverLetter.pdf
+    mv cover-letter.pdf test-output/Scott_Kinney-CoverLetter.pdf
     echo "✅ Cover letter PDF exported successfully"
 else
     echo "❌ Cover letter PDF export failed"

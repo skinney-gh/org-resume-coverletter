@@ -77,10 +77,10 @@
 # These org properties can be used as an alternative to LaTeX commands above
 # Currently used for reference and future enhancements
 
-#+COMPANY: [COMPANY NAME]                                    % Target company name
-#+POSITION: [POSITION TITLE]                                % Position title
-#+HIRING_MANAGER: [HIRING MANAGER NAME]                     % Hiring manager name
-#+SPECIFIC_REQUIREMENTS: [SPECIFIC SKILLS/REQUIREMENTS FROM JOB POSTING]  % Key requirements
+#+COMPANY: [COMPANY NAME]                                    % Vultr
+#+POSITION: [POSITION TITLE]                                % DevOps Engineer
+#+HIRING_MANAGER: [HIRING MANAGER NAME]                     % To whom it may concern
+#+SPECIFIC_REQUIREMENTS: [SPECIFIC SKILLS/REQUIREMENTS FROM JOB POSTING]  % Ansible, Terraform, Go
 #+DATE: \today                                              % Current date (LaTeX command)
 
 #+BEGIN_EXPORT latex
@@ -100,7 +100,7 @@
 {\large\bfseries\color{accent}Dear \hiringmanagername,}\\[0.5cm]
 #+END_EXPORT
 
-I am writing to express my strong interest in the [POSITION TITLE] position at [COMPANY NAME]. With over 8 years of experience spanning data engineering, machine learning operations, and analytics, I am excited about the opportunity to contribute to your team's innovative work in [SPECIFIC SKILLS/REQUIREMENTS FROM JOB POSTING].
+I am writing to express my strong interest in the [POSITION TITLE] position at [COMPANY NAME]. With over 7 years of DevOps experience I am excited about the opportunity to contribute to your team's innovative work in [SPECIFIC SKILLS/REQUIREMENTS FROM JOB POSTING].
 
 In my current role as Senior Analyst MLOps at Definity Financial, I have developed and deployed statistical models, LLM applications, and rule-based systems on RStudio and Google Cloud, significantly enhancing business workflows and productivity. This experience has given me deep expertise in the full ML lifecycle, from model development to production deployment and monitoring. I have successfully managed project lifecycles while balancing technical debt and stakeholder expectations, skills that would be directly applicable to the challenges at [COMPANY NAME].
 
